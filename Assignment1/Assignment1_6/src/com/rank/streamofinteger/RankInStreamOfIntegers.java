@@ -8,9 +8,9 @@ public class RankInStreamOfIntegers {
 	public static int linearSearch(int arr[],int key) {
 		int count=0;
 		for(int i=0;i<=arr.length-1;i++) {
-			count++;
-			if(arr[i]==key) {
-				break;
+			
+			if(arr[i]<=key) {
+				count++;
 			}
 		}
 		return count;
