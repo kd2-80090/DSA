@@ -2,34 +2,33 @@
 
 package com.linearsearch;
 
-import java.util.Scanner;
 
 public class FirstNonRepeatingElements {
 
 	public static int linearSearch(int arr[]) {
-		int count=0;
-		for(int i=0;i<=arr.length-1;i++) {
-			for(int j=i+1;j<=arr.length-1;j++) {
-				if(arr[i]==arr[j]) {
-					count++;
-					break;
-				}
-				if(count==0)
-					return i;
-			}
-		}
+		int key, count;
+        for(int i = 0 ; i < arr.length-1; i++) 
+        {
+        	key=arr[i];
+        	count=0;
+        	for(int j = 0; j < arr.length-1; j++) {
+        		if(key==arr[j])
+        		{
+        			++count;
+        		}	
+        	}
+        	if(count==1) 		//here if element occurs only ones 
+    			return i;
+        }
 		return -1;
 	}
 	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {		
 		
-		System.out.println("Enter key to get rank : ");
-		int key = sc.nextInt();
-		int arr[] = { 1, 2, 3, -1, 2, 1, 0, 4, -1, 7, 8 };
+		int arr[] = { 1, 2, 2, -1, 2, 1, 0, 4, -1, 7, 8 };
 		
 		int res = FirstNonRepeatingElements.linearSearch(arr);
-		System.out.println(res);
+		System.out.println(arr[res]);
 	}
 }
 
