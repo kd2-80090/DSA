@@ -7,17 +7,13 @@ public class Tester {
 	
 	public static void insertionSort(Employee arr[],int N) {
 		for(int i=1;i<N;i++) {
-			double temp = arr[i].getSalary();
+			Employee temp = arr[i];
 			int j=i-1;
-			while(j>=0 && arr[j].getSalary()>temp) {
-				double sal =arr[j+1].getSalary();
-				 sal= arr[j].getSalary();
-				 
+			while(j>=0 && arr[j].getSalary()>temp.getSalary()) {
+				arr[j+1]=arr[j];
 				j--;
 			}
-			double salAssign = arr[j+1].getSalary();
-			salAssign=temp;
-			
+			arr[j+1]=temp;
 		}
 	}
 	
